@@ -1,0 +1,1030 @@
+/* Import Google Fonts for modern typography */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap");
+/* Header Styling */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap");
+.header-section {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,0.2)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+  opacity: 0.3;
+}
+
+/* Logo Styling */
+.header-section .logo-animate {
+  width: 350px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Logo Animation on Hover */
+.header-section .logo-animate:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Heading Styling */
+.header-section h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3rem; /* Adjusted for better hierarchy */
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  opacity: 0;
+  animation: fadeInDown 1s ease forwards;
+  animation-delay: 0.3s;
+  margin-top: -85px;
+}
+
+/* Tagline Styling */
+.header-section p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #e0f2fe; /* Light blue-white for contrast */
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-section {
+    min-height: 300px;
+  }
+  .header-section .logo-animate {
+    width: 350px !important;
+    transition: transform 0.5s ease-in-out;
+  }
+  .header-section h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .header-section p {
+    font-size: 1rem;
+  }
+  .header-section .logo-animate {
+    width: 120px;
+  }
+}
+.mission-vision {
+  background-color: #f0f9ff; /* Light blue background for a clean, water-inspired look */
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.mission-vision::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.mission-vision h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue to match the header */
+  margin-bottom: 1.5rem;
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to headings */
+.mission-vision h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6; /* Lighter blue for contrast */
+  border-radius: 2px;
+}
+
+/* Paragraph Styling */
+.mission-vision p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #4b5563; /* Dark gray for readability */
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Animation Class for Elements When They Come Into View */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial State for Animation */
+.mission-heading,
+.vision-heading {
+  transform: translateY(20px);
+}
+
+.mission-text,
+.vision-text {
+  transform: translateY(30px);
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .mission-vision h2 {
+    font-size: 2rem;
+  }
+  .mission-vision p {
+    font-size: 1rem;
+  }
+  .mission-vision {
+    padding: 3rem 0;
+  }
+}
+/* About Section Styling */
+.about {
+  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%); /* Subtle white-to-light-blue gradient */
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.about h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue to match previous sections */
+  margin-bottom: 1.5rem;
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to the heading */
+.about h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6; /* Lighter blue for contrast */
+  border-radius: 2px;
+}
+
+/* Paragraph Styling */
+.about p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #4b5563; /* Dark gray for readability */
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Animation Class for Elements When They Come Into View */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial State for Animation */
+.about-heading {
+  transform: translateY(20px);
+}
+
+.about-text {
+  transform: translateY(30px);
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about h2 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+  .about {
+    padding: 3rem 0;
+  }
+}
+/* Import Google Fonts (consistent with previous sections) */
+/* Impact Section Styling */
+.impact {
+  background: linear-gradient(180deg, #e0f2fe 0%, #ffffff 100%); /* Light blue to white gradient */
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.impact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.impact h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue to match previous sections */
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to the heading */
+.impact h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6; /* Lighter blue for contrast */
+  border-radius: 2px;
+}
+
+/* Impact Card Styling */
+.impact-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  opacity: 0;
+}
+
+/* Image Styling */
+.impact-card img {
+  width: 100%;
+  height: 250px; /* Fixed height for uniformity */
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensure images scale nicely */
+  transition: transform 0.5s ease;
+}
+
+/* Overlay for Hover Effect */
+.impact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 58, 138, 0.7); /* Deep blue overlay with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Caption Styling */
+.impact-caption {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.impact-card:hover {
+  transform: translateY(-5px);
+}
+
+.impact-card:hover img {
+  transform: scale(1.1);
+}
+
+.impact-card:hover .impact-overlay {
+  opacity: 1;
+}
+
+.impact-card:hover .impact-caption {
+  transform: translateY(0);
+}
+
+/* Animation Class for Elements When They Come Into View */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial State for Animation */
+.impact-heading {
+  transform: translateY(20px);
+}
+
+.impact-card {
+  transform: translateY(30px);
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+.impact-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1e3a8a; /* Deep blue to match the theme */
+  text-align: center;
+  padding: 0.75rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Staggered Animation for Cards */
+.impact-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.impact-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.impact-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.impact-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .impact h2 {
+    font-size: 2rem;
+  }
+  .impact-card img {
+    height: 200px;
+  }
+  .impact-caption {
+    font-size: 0.9rem;
+  }
+  .impact {
+    padding: 3rem 0;
+  }
+}
+/* Import Google Fonts (consistent with previous sections) */
+/* Map Section Styling */
+.map-section {
+  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%); /* White to light blue gradient */
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.map-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.map-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue to match previous sections */
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to the heading */
+.map-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6; /* Lighter blue for contrast */
+  border-radius: 2px;
+}
+
+/* Paragraph Styling */
+.map-section p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #4b5563; /* Dark gray for readability */
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Map Container Styling */
+.map-container {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Iframe Styling */
+.map-container iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Note Styling */
+.map-note {
+  font-size: 0.9rem;
+  color: #6b7280; /* Lighter gray for the note */
+}
+
+/* Animation Class for Elements When They Come Into View */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial State for Animation */
+.map-heading {
+  transform: translateY(20px);
+}
+
+.map-text,
+.map-container,
+.map-note {
+  transform: translateY(30px);
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .map-section h2 {
+    font-size: 2rem;
+  }
+  .map-section p {
+    font-size: 1rem;
+  }
+  .map-section {
+    padding: 3rem 0;
+  }
+  .map-container iframe {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+}
+/* Import Google Fonts (consistent with previous sections) */
+/* Team Section Styling */
+.team {
+  background: linear-gradient(180deg, #e0f2fe 0%, #ffffff 100%); /* Light blue to white gradient */
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.team h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue to match previous sections */
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to the heading */
+.team h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6; /* Lighter blue for contrast */
+  border-radius: 2px;
+}
+
+/* Team Card Styling */
+.team-card {
+  background: #ffffff; /* White background for the card */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  min-height: 200px; /* Ensure cards are uniform in height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Team Name Styling */
+.team-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #1e3a8a; /* Deep blue to match the theme */
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Team Role Styling */
+.team-role {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #3b82f6; /* Lighter blue for contrast */
+  margin-bottom: 0.75rem;
+}
+
+/* Team Description Styling */
+.team-description {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #4b5563; /* Dark gray for readability */
+  line-height: 1.6;
+}
+
+/* Hover Effects */
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-card:hover .team-name {
+  color: #3b82f6; /* Lighter blue on hover for interactivity */
+}
+
+/* Animation Class for Elements When They Come Into View */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial State for Animation */
+.team-heading {
+  transform: translateY(20px);
+}
+
+.team-card {
+  transform: translateY(30px);
+  transition-delay: 0.2s; /* Slight delay for staggered effect */
+}
+
+/* Staggered Animation for Cards */
+.team-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.team-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.team-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .team h2 {
+    font-size: 2rem;
+  }
+  .team-card {
+    padding: 1.5rem;
+    min-height: 180px;
+  }
+  .team-name {
+    font-size: 1.1rem;
+  }
+  .team-role {
+    font-size: 0.9rem;
+  }
+  .team-description {
+    font-size: 0.85rem;
+  }
+  .team {
+    padding: 3rem 0;
+  }
+}
+/* Import Google Fonts (consistent with previous sections) */
+/* Donation Section Styling */
+.donation {
+  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%); /* White to light blue gradient */
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.donation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.donation h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a; /* Deep blue to match previous sections */
+  margin-bottom: 1.5rem;
+  position: relative;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to the heading */
+.donation h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6; /* Lighter blue for contrast */
+  border-radius: 2px;
+}
+
+/* Message Styling */
+.donation-message {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #4b5563; /* Dark gray for readability */
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Donation Button Styling */
+.donation-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  background-color: #10b981; /* Green for the "success" button */
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  display: inline-block;
+}
+
+.donation-button:hover {
+  background-color: #059669; /* Darker green on hover */
+  transform: scale(1.05);
+}
+
+/* Bank Details Styling */
+.bank-details {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #4b5563; /* Dark gray for readability */
+  background: #ffffff; /* White background for contrast */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.bank-details p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.bank-details strong {
+  color: #1e3a8a; /* Deep blue for emphasis */
+}
+
+/* Animation Class for Elements When They Come Into View */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial State for Animation */
+.donation-heading {
+  transform: translateY(20px);
+}
+
+.donation-message {
+  transform: translateY(20px);
+  transition-delay: 0.2s;
+}
+
+.donation-button {
+  transform: translateY(20px);
+  transition-delay: 0.4s;
+}
+
+.bank-details {
+  transform: translateY(20px);
+  transition-delay: 0.6s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .donation h2 {
+    font-size: 2rem;
+  }
+  .donation-message {
+    font-size: 1rem;
+  }
+  .donation-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .bank-details {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+  .donation {
+    padding: 3rem 0;
+  }
+}
+/* Contact Section Styling */
+.contact {
+  background: linear-gradient(180deg, #e0f2fe 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+/* Add a subtle wave divider at the top of the section */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+}
+
+/* Heading Styling */
+.contact h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Add an underline effect to the heading */
+.contact h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #3b82f6;
+  border-radius: 2px;
+}
+
+/* Subheading Styling */
+.contact-subheading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Info Styling */
+.contact-info {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Contact Detail Styling */
+.contact-detail {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #4b5563; /* Dark gray for readability */
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.contact-detail strong {
+  color: #1e3a8a; /* Deep blue for emphasis */
+}
+
+.contact-detail a {
+  color: #3b82f6; /* Lighter blue for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-detail a:hover {
+  color: #1e3a8a; /* Darker blue on hover */
+}
+
+/* Social Links Styling */
+.contact-social {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.contact-social strong {
+  color: #1e3a8a;
+}
+
+.social-link {
+  color: #3b82f6;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #1e3a8a;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* Form Label Styling */
+.form-label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #1e3a8a;
+}
+
+/* Form Input and Textarea Styling */
+.form-control {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #4b5563;
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+/* Form Button Styling */
+.contact-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  background-color: #3b82f6; /* Lighter blue to match the theme */
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #1e3a8a; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}/*# sourceMappingURL=style.css.map */
