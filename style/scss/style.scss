@@ -626,122 +626,46 @@
 
 
 
-/* Import Google Fonts (consistent with previous sections) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap');
-
-/* Location Section Styling */
 .location {
-  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%); /* White to light blue gradient */
-  position: relative;
-  overflow: hidden;
-  padding: 5rem 0;
   text-align: center;
+  padding: 50px 20px;
 }
 
-/* Add a subtle wave divider at the top of the section */
-.location::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(255,255,255,1)"/></svg>') repeat-x;
-  background-size: 1200px 120px;
+.map-heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* Heading Styling */
-.location h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  color: #1e3a8a; /* Deep blue to match previous sections */
-  margin-bottom: 2rem;
-  position: relative;
-  opacity: 0;
-  transition: all 0.8s ease;
-}
-
-/* Add an underline effect to the heading */
-.location h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background-color: #3b82f6; /* Lighter blue for contrast */
-  border-radius: 2px;
-}
-
-/* Map Container Styling */
 .map-container {
-  position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  max-width: 1000px; /* Limit max width for larger screens */
+  max-width: 800px;
   margin: 0 auto;
-  opacity: 0;
-  transition: all 0.8s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 #map {
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 400px;
   width: 100%;
-  height: 100%;
 }
 
-/* Note Styling */
 .map-note {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
   font-size: 1rem;
-  color: #4b5563; /* Dark gray for readability */
-  max-width: 800px;
-  margin: 1.5rem auto 0;
-  opacity: 0;
-  transition: all 0.8s ease;
+  color: #666;
+  margin-top: 20px;
 }
 
-/* Animation Class for Elements When They Come Into View */
-.animate-on-scroll.is-visible {
+/* Optional animation for scroll effect */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Initial State for Animation */
-.map-heading {
-  transform: translateY(20px);
-}
-
-.map-container,
-.map-note {
-  transform: translateY(30px);
-  transition-delay: 0.2s;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .location h2 {
-    font-size: 2rem;
-  }
-
-  .map-note {
-    font-size: 0.9rem;
-  }
-
-  .location {
-    padding: 3rem 0;
-  }
-
-  .map-container {
-    padding-top: 75%; /* Adjust aspect ratio for smaller screens (4:3) */
-  }
 }
 
 

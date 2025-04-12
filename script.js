@@ -215,65 +215,34 @@ document.querySelector("form").addEventListener("submit", function (e) {
   });
 
   // Initialize the map
-function initMap() {
-  // Center the map between Oromia and Afar
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 6,
-    center: { lat: 9.5, lng: 40.5 }, // Approximate center between Oromia and Afar
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  // Center the map between Kemise and Asayita
+  const map = L.map('map').setView([11.1417, 40.65], 7); // Approximate center and zoom level
 
-  // Define arrow marker icon
-  const arrowIcon = {
-    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-    scale: 5,
-    fillColor: '#3b82f6', // Lighter blue to match the theme
-    fillOpacity: 1,
-    strokeColor: '#1e3a8a', // Deep blue outline
-    strokeWeight: 2,
-  };
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Leaflet | © OpenStreetMap contributors',
+  }).addTo(map);
 
-  // Add markers for rural areas
-  const locations = [
-    {
-      position: { lat: 10.717, lng: 39.867 }, // Kemise, Oromia (Oromia Zone, Amhara Region)
-      title: 'Kemise, Oromia Region',
-      description: 'Supporting rural water access projects.',
-    },
-    {
-      position: { lat: 11.566, lng: 41.438 }, // Asayita, Afar Region (administrative center)
-      title: 'Asayita, Afar Region',
-      description: 'Supporting rural water access projects.',
-    },
-  ];
+  // Add markers for Kemise and Asayita
+  const kemiseMarker = L.marker([10.7167, 39.8667]).addTo(map);
+  kemiseMarker.bindPopup('<b>Kemise, Oromia Region</b><br>Our presence here supports local communities.');
 
-  locations.forEach((location) => {
-    new google.maps.Marker({
-      position: location.position,
-      map: map,
-      title: location.title,
-      icon: arrowIcon,
-    }).addListener('click', function () {
-      new google.maps.InfoWindow({
-        content: `<b>${location.title}</b><br>${location.description}`,
-      }).open(map, this);
-    });
-  });
-}
-document.addEventListener('DOMContentLoaded', () => {
+  const asayitaMarker = L.marker([11.5667, 41.4333]).addTo(map);
+  asayitaMarker.bindPopup('<b>Asayita, Afar Region</b><br>Our presence here supports local communities.');
+
+  // Optional: Open the first popup by default
+  kemiseMarker.openPopup();
+
+  // Optional: Add animation on scroll
   const elements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    },
-    { threshold: 0.3 } // Trigger when 30% of the element is visible
-  );
-
-  elements.forEach((element) => {
-    observer.observe(element);
-  });
+  elements.forEach(element => observer.observe(element));
 });
