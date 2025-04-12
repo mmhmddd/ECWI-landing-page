@@ -9,6 +9,41 @@
   <link rel="stylesheet" href="style/scss/style.css">
 </head>
 <body>
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav nav-links">
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#mission">Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#map">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#donate">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link animate-nav" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
   <header class="header-section text-white text-center py-5">
     <div class="container">
       <img src="image/Add_a_subheading-removebg-preview.png" alt="ECWI Logo" class="mb-3 logo-animate" width="100">
@@ -17,7 +52,7 @@
     </div>
   </header>
 
-  <section class="mission-vision py-5">
+  <section class="mission-vision py-5" id="mission">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
@@ -38,7 +73,7 @@
     </div>
   </section>
 
-  <section class="about py-5 bg-light">
+  <section class="about py-5 bg-light" id="about">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
@@ -51,70 +86,19 @@
     </div>
   </section>
 
-  <section class="impact py-5">
-  <div class="container">
-    <h2 class="text-primary mb-5 impact-heading animate-on-scroll">Our Impact in Action</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="impact-card animate-on-scroll">
-          <img src="image/solar pumb.jpg" alt="Solar Pump" class="img-fluid rounded shadow">
-          <div class="impact-overlay">
-            <div class="impact-caption">Solar-Powered Pumps</div>
-          </div>
-          <div class="impact-title">Solar-Powered Pumps</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="impact-card animate-on-scroll">
-          <img src="image/clean-water.jpg" alt="Kids Drinking" class="img-fluid rounded shadow">
-          <div class="impact-overlay">
-            <div class="impact-caption">Kids Accessing Clean Water</div>
-          </div>
-          <div class="impact-title">Kids Accessing Clean Water</div>        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="impact-card animate-on-scroll">
-          <img src="image/workshop-clean.jpg" alt="Training" class="img-fluid rounded shadow">
-          <div class="impact-overlay">
-            <div class="impact-caption">Hygiene Training Workshops</div>
-          </div>
-          <div class="impact-title">Hygiene Training Workshops</div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="impact-card animate-on-scroll">
-          <img src="image/Filtration kits.jpg" alt="Filtration Kits" class="img-fluid rounded shadow">
-          <div class="impact-overlay">
-            <div class="impact-caption">Distributing Filtration Kits</div>
-          </div>
-          <div class="impact-title">Distributing Filtration Kits</div>
-        </div>
-      </div>
-    </div>
+
+<!-- Include Leaflet CSS and JS -->
+<section class="location py-5" id="Map">
+  <h2 class="map-heading animate-on-scroll">Location of the Charity</h2>
+  <div class="map-container animate-on-scroll">
+    <div id="map"></div>
   </div>
+  <p class="map-note mt-3 animate-on-scroll">
+    Main Project Focus Areas: Oromia Region & Afar Region, Ethiopia. Arrows indicate rural project focus areas, such as near Kemise in Oromia and Asayita in Afar.
+  </p>
 </section>
 
-<section class="map-section py-5 bg-light">
-  <div class="container">
-    <h2 class="text-primary mb-4 map-heading animate-on-scroll">Where We Work</h2>
-    <p class="map-text animate-on-scroll">
-      Main Focus Areas: Oromia Region & Afar Region, Ethiopia
-    </p>
-    <div class="ratio ratio-16x9 map-container animate-on-scroll">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999999.9999999998!2d39.3812!3d9.145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1635d4b6b613e1b7%3A0x7b7a6e9f7b7a6e9f!2sOromia%20Region%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1696982400000!5m2!1sen!2sus"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-    <p class="map-note mt-3 animate-on-scroll">
-      Note: This map highlights the Oromia and Afar Regions. Our projects focus on rural areas within these regions, such as near Kemise in Oromia and Asayita in Afar.
-    </p>
-  </div>
-</section>
-
-<section class="team py-5">
+<section class="team py-5" id="team">
   <div class="container">
     <h2 class="text-primary mb-5 team-heading animate-on-scroll">Meet Our Team</h2>
     <div class="row g-4">
@@ -149,7 +133,7 @@
   </div>
 </section>
 
-<section class="donation py-5 text-center">
+<section class="donation py-5 text-center" id="donation">
   <div class="container">
     <h2 class="text-primary mb-4 donation-heading animate-on-scroll">Donate & Make an Impact</h2>
     <p class="donation-message animate-on-scroll">
@@ -165,7 +149,7 @@
   </div>
 </section>
 
-<section class="contact py-5">
+<section class="contact py-5" id="contact">
   <div class="container">
     <h2 class="text-primary mb-5 contact-heading animate-on-scroll">Contact Us</h2>
     <div class="row g-5">
@@ -224,6 +208,8 @@
   <script src="vendor/bootstrab/js/bootstrap.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

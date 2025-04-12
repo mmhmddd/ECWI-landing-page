@@ -3,6 +3,174 @@
 
 
 
+/* Import Google Fonts (consistent with previous sections) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap');
+
+/* Navbar Styling */
+.navbar-custom {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white initially */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+/* Navbar on Scroll (Semi-Transparent Effect) */
+.navbar-custom.navbar-semi-transparent {
+  background: rgba(255, 255, 255, 0.5); /* Slightly more transparent on scroll */
+  backdrop-filter: blur(5px); /* Reduced blur for a lighter effect */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 0;
+}
+
+/* Add a subtle wave pattern in the background */
+.navbar-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.29,158,28,70.36-5.37,136.33-36.29,206.8-36.29,70.47,0,138.67,30.92,209.13,36.29,54.41,4.29,110.21-5.8,158-28V0H0Z" fill="rgba(59,130,246,0.1)"/></svg>') repeat-x;
+  background-size: 1200px 120px;
+  opacity: 0.3;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+/* Adjust wave pattern opacity when semi-transparent */
+.navbar-custom.navbar-semi-transparent::before {
+  opacity: 0.1; /* Slightly reduce wave visibility */
+}
+
+/* Navbar Brand (Logo) Styling */
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #1e40af; /* Deep blue */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for readability */
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #60a5fa; /* Lighter blue on hover */
+}
+
+/* Navbar Links Styling */
+.nav-links .nav-item {
+  margin: 0 1rem;
+}
+
+.nav-links .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #1e40af;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Shadow for readability */
+  position: relative;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Underline Effect on Hover */
+.nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #60a5fa;
+  transition: width 0.3s ease;
+}
+
+.nav-links .nav-link:hover::after,
+.nav-links .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+  color: #60a5fa;
+}
+
+/* Animation for Nav Links on Page Load */
+.nav-links .animate-nav {
+  animation: fadeInNav 0.5s ease forwards;
+}
+
+.nav-links .nav-item:nth-child(1) .animate-nav { animation-delay: 0.1s; }
+.nav-links .nav-item:nth-child(2) .animate-nav { animation-delay: 0.2s; }
+.nav-links .nav-item:nth-child(3) .animate-nav { animation-delay: 0.3s; }
+.nav-links .nav-item:nth-child(4) .animate-nav { animation-delay: 0.4s; }
+.nav-links .nav-item:nth-child(5) .animate-nav { animation-delay: 0.5s; }
+.nav-links .nav-item:nth-child(6) .animate-nav { animation-delay: 0.6s; }
+.nav-links .nav-item:nth-child(7) .animate-nav { animation-delay: 0.7s; }
+
+/* Keyframe Animation for Nav Links */
+@keyframes fadeInNav {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar Toggler Styling */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(30, 64, 175, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Ensure toggler icon remains visible when semi-transparent */
+.navbar-custom.navbar-semi-transparent .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(30, 64, 175, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .navbar-custom {
+    padding: 0.75rem 0;
+  }
+
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95); /* Keep mobile menu opaque */
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Ensure mobile menu remains opaque even when navbar is semi-transparent */
+  .navbar-custom.navbar-semi-transparent .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .nav-links .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  .nav-links .nav-link {
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: none; /* Remove shadow in mobile menu for clarity */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
 /* Header Styling */
 .header-section {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
@@ -12,6 +180,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  margin-top: 25px;
 }
 
 .header-section::before {
@@ -460,16 +629,17 @@
 /* Import Google Fonts (consistent with previous sections) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Open+Sans:wght@400&display=swap');
 
-/* Map Section Styling */
-.map-section {
+/* Location Section Styling */
+.location {
   background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 100%); /* White to light blue gradient */
   position: relative;
   overflow: hidden;
   padding: 5rem 0;
+  text-align: center;
 }
 
 /* Add a subtle wave divider at the top of the section */
-.map-section::before {
+.location::before {
   content: '';
   position: absolute;
   top: 0;
@@ -481,20 +651,19 @@
 }
 
 /* Heading Styling */
-.map-section h2 {
+.location h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
   color: #1e3a8a; /* Deep blue to match previous sections */
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   position: relative;
-  text-align: center;
   opacity: 0;
   transition: all 0.8s ease;
 }
 
 /* Add an underline effect to the heading */
-.map-section h2::after {
+.location h2::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -506,40 +675,37 @@
   border-radius: 2px;
 }
 
-/* Paragraph Styling */
-.map-section p {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #4b5563; /* Dark gray for readability */
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  opacity: 0;
-  transition: all 0.8s ease;
-}
-
 /* Map Container Styling */
 .map-container {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1000px; /* Limit max width for larger screens */
+  margin: 0 auto;
   opacity: 0;
   transition: all 0.8s ease;
 }
 
-/* Iframe Styling */
-.map-container iframe {
-  border: none;
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 
 /* Note Styling */
 .map-note {
-  font-size: 0.9rem;
-  color: #6b7280; /* Lighter gray for the note */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #4b5563; /* Dark gray for readability */
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 
 /* Animation Class for Elements When They Come Into View */
@@ -553,32 +719,30 @@
   transform: translateY(20px);
 }
 
-.map-text,
 .map-container,
 .map-note {
   transform: translateY(30px);
-  transition-delay: 0.2s; /* Slight delay for staggered effect */
+  transition-delay: 0.2s;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .map-section h2 {
+  .location h2 {
     font-size: 2rem;
   }
 
-  .map-section p {
-    font-size: 1rem;
+  .map-note {
+    font-size: 0.9rem;
   }
 
-  .map-section {
+  .location {
     padding: 3rem 0;
   }
 
-  .map-container iframe {
-    height: 300px; /* Adjust height for smaller screens */
+  .map-container {
+    padding-top: 75%; /* Adjust aspect ratio for smaller screens (4:3) */
   }
 }
-
 
 
 /* Import Google Fonts (consistent with previous sections) */
